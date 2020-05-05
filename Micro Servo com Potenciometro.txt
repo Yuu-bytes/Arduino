@@ -1,0 +1,23 @@
+// https://www.tinkercad.com/things/0RBfJUAkP67
+
+#include <Servo.h>
+
+Servo servo;
+int valorA;
+double angulo;
+int pont;
+
+void setup() 
+{
+  Serial.begin(9600);
+  servo.attach(6);
+}
+
+void loop() 
+{
+  valorA = analogRead(pont);
+  angulo = map(valorA, 0, 1023, 0, 180); 
+  Serial.println(angulo);
+  servo.write(angulo);                 
+  delay(15);                           
+}

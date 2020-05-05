@@ -1,0 +1,26 @@
+//https://www.tinkercad.com/things/8nYwH89ovLU
+
+
+const int ledLaranja = 8;
+const int ledVerde = 9;
+int interrupt = digitalPinToInterrupt(2);
+
+void setup()
+{
+ pinMode(ledLaranja, OUTPUT);
+ pinMode(ledVerde, OUTPUT);
+  attachInterrupt(interrupt, LigarLedVerde, CHANGE);
+}
+
+void loop()
+{
+ digitalWrite(ledLaranja, HIGH);
+  delay(500);
+  digitalWrite(ledLaranja, LOW);
+  delay(500);
+}
+
+void LigarLedVerde()
+{
+  digitalWrite(ledVerde, HIGH);
+}

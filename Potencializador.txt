@@ -1,0 +1,23 @@
+// https://www.tinkercad.com/things/hw33pBNHwB9
+
+const int led = 8;
+const int potenciometro = A5;
+
+void setup()
+{
+  pinMode(led, OUTPUT);
+}
+
+void loop()
+{
+  int tempoDelay;
+  
+  int valorLeitura = analogRead(potenciometro);
+  
+  tempoDelay = map(valorLeitura, 0, 1023, 1023, 0);
+  
+  digitalWrite(led, HIGH);
+  delay(tempoDelay); // Wait for 1000 millisecond(s)
+  digitalWrite(led, LOW);
+  delay(tempoDelay); // Wait for 1000 millisecond(s)
+}

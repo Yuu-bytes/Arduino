@@ -1,0 +1,31 @@
+//https://www.tinkercad.com/things/a3ooEKIhloz
+
+
+const int primeiroLED = 2;
+const int ultimoLED = 8;
+const int potenciometro = A0;
+
+void setup()
+{
+  for(int i = primeiroLED; i <= ultimoLED; i++)
+  {
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop()
+{
+  int valorLeituraPotenciometro = analogRead(potenciometro);
+  
+  int numeroLeds =
+    map(valorLeituraPotenciometro, 0, 1023, primeiroLED, ultimoLED);
+  
+  for(int i = primeiroLED; i <= ultimoLED; i++)
+  {
+    if(i <= numeroLeds){
+      digitalWrite(i, HIGH);
+    }else{
+      digitalWrite(i, LOW);
+    }
+  }
+}

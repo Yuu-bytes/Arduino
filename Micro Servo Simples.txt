@@ -1,0 +1,25 @@
+//  https://www.tinkercad.com/things/gLX1KYWeorV
+
+#include <Servo.h>
+
+Servo servoMotor;
+int valor = 180;
+
+void setup() 
+{
+  servoMotor.attach(6);
+}
+
+void loop() 
+{
+  for(int i = 0; i < valor; i++){
+  	servoMotor.write(i);
+    delay(10);
+  }
+  delay(1000);
+  for(int i = valor; i > 0; i--){
+  	servoMotor.write(i);
+    delay(10);
+  }
+  delay(1000);
+}

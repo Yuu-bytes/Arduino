@@ -1,0 +1,28 @@
+// https://www.tinkercad.com/things/7RVxvaxh00q
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+}
+
+void loop()
+{
+  //VERDE
+  digitalWrite(11, HIGH);
+  delay(10000); // Wait for 10s
+  digitalWrite(11, LOW);
+  delay(0); // Wait for 0s
+  //AMARELO
+  digitalWrite(12, HIGH);
+  delay(2000); // Wait for 2s
+  digitalWrite(12, LOW);
+  delay(0); // Wait for 0s
+  //VERMELHO
+  digitalWrite(13, HIGH);
+  delay(15000); // Wait for 15s
+  digitalWrite(13, LOW);
+  delay(0); // Wait for 0s
+  
+}

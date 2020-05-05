@@ -1,0 +1,39 @@
+//https://www.tinkercad.com/things/eSwtzXpMP9C
+
+const int primeiroLED = 2;
+const int ultimoLED = 8;
+const int potenciometro = A0;
+const int pont = A1;
+
+void setup()
+{
+  for(int i = primeiroLED; i <= ultimoLED; i++)
+  {
+    pinMode(i, OUTPUT);
+  }
+}
+
+void off(){
+  for(int i = primeiroLED; i <= ultimoLED; i++)
+  {
+  	digitalWrite(i, LOW);
+  }
+}
+
+void loop()
+{
+  int valorLeituraPotenciometro = analogRead(potenciometro);
+  
+  int numeroLeds =
+    map(valorLeituraPotenciometro, 0, 1023, primeiroLED, ultimoLED);
+  
+  int tempoDelay = map(analogRead(pont), 0, 1023, 100, 1000);
+  
+  off();
+  delay(tempoDelay);
+  for(int i = primeiroLED; i <= numeroLeds; i++)
+  {
+    digitalWrite(i, HIGH);
+    delay(tempoDelay);
+  }
+}

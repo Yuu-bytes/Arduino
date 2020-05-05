@@ -1,0 +1,33 @@
+//https://www.tinkercad.com/things/2QsInR8gLbt
+
+const int vermelho = 11;
+const int azul = 10;
+const int verde = 9;
+
+const int pontVermelho = A2;
+const int pontVerde = A1;
+const int pontAzul = A0;
+
+void setup()
+{
+  pinMode(vermelho, OUTPUT);
+  pinMode(verde, OUTPUT);
+  pinMode(azul, OUTPUT);
+}
+
+void ledRGB(int R, int G, int B) {
+  analogWrite(vermelho, R);
+  analogWrite(verde, G);
+  analogWrite(azul, B);
+}
+
+void loop()
+{
+  int valorVermelho = analogRead(pontVermelho);
+  int ver = map(valorVermelho, 0, 1023, 0, 255);
+  int valorVerde = analogRead(pontVerde);
+  int verd = map(valorVerde, 0, 1023, 0, 255);
+  int valorAzul = analogRead(pontAzul);
+  int azu = map(valorAzul, 0, 1023, 0, 255);
+  ledRGB(ver, verd, azu);
+}
